@@ -4,8 +4,16 @@ The Go Lang Program calculates the minimum distance of points.
 
 # Build
 
-go build GoCalcPoints.go
+go build goCalcPoints.go
 
 # Run
 
-./GoCalcPoints
+go run goCalcPoints.go
+
+or
+
+./goCalcPoints.exe
+
+# Test
+
+go test -v
