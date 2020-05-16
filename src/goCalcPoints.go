@@ -4,13 +4,13 @@ import (
     "fmt"
 	"math"
 	"errors"
-	"./calc/point"
+	//"./calc/point"
 )
 
 func main() {
 	fmt.Printf("App start..\n")
 	
-	fmt.Println(calc.calc())
+//	fmt.Println(calc.calc())
 
 
 	fmt.Println(math.Sin(1))
