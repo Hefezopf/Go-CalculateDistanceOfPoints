@@ -3,34 +3,46 @@ package main
 import (
     "fmt"
 	"errors"
-	"calc/point"
+	"math"
 )
+type Point struct {
+	X int
+	Y int
+}
+
+func DetermineMinimum(P1 Point, P2 Point) float64 {  
+	return math.Sqrt(math.Pow(float64(P2.X-P1.X),2) + math.Pow(float64(P2.Y-P1.Y),2) );
+}
+
+func DetermineMinimumOfArray(P1 Point, P2 Point, P3 Point, P4 Point) float64 {  
+	return math.Sqrt(math.Pow(float64(P2.X-P1.X),2) + math.Pow(float64(P2.Y-P1.Y),2) );
+} 
 
 func main() {
 	fmt.Printf("Start App...\n")
 	
-	pA := point.Point {
+	pA := Point {
         X: 1,
         Y: 1,
 	}	
-	pB := point.Point {
+	pB := Point {
         X: 1,
         Y: 3,
 	}
-	pC := point.Point {
+	pC := Point {
         X: 4,
         Y: 4,
 	}	
-	pD := point.Point {
+	pD := Point {
         X: 6,
         Y: 1,
     }
 
-	fmt.Println("DetermineMinimum(pA, pB)", point.DetermineMinimum(pA, pB))
-	fmt.Println("DetermineMinimum(pC, pD)", point.DetermineMinimum(pC, pD))
+	fmt.Println("DetermineMinimum(pA, pB)", DetermineMinimum(pA, pB))
+	fmt.Println("DetermineMinimum(pC, pD)", DetermineMinimum(pC, pD))
 
 	//Point[] points = {pA, pB, pC, pD};
-	fmt.Println("Minimum distance of all points = ", point.DetermineMinimumOfArray(pA, pB, pC, pD))
+	fmt.Println("Minimum distance of all points = ", DetermineMinimumOfArray(pA, pB, pC, pD))
 
 	if 0 == 0 {
 		fmt.Println("0 == 0")

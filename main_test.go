@@ -1,36 +1,35 @@
 package main
 
 import (
-	"calc/point"
   "testing"
   "math"
 )
 
 func TestDetermineMinimumAB(t *testing.T) {
-	pA := point.Point{
+	pA := Point{
 		X: 1,
 		Y: 1,
 	}
-	pB := point.Point{
+	pB := Point{
 		X: 1,
 		Y: 3,
 	}
-	ans := point.DetermineMinimum(pA, pB)
+	ans := DetermineMinimum(pA, pB)
 	if ans != 2 {
 		t.Errorf("DetermineMinimum()= %f; want 2", ans)
 	}
 }
 
 func TestDetermineMinimumAC(t *testing.T) {
-	pA := point.Point{
+	pA := Point{
 		X: 1,
 		Y: 1,
 	}
-	pC := point.Point{
+	pC := Point{
 		X: 4,
 		Y: 4,
   }
-  ans := point.DetermineMinimum(pA, pC)
+  ans := DetermineMinimum(pA, pC)
 	if math.Round(ans) != 4.0 {
 		t.Errorf("DetermineMinimum()= %f; want 4.242641", ans)
 	}
@@ -43,24 +42,24 @@ func almostEqual(a, b float64) bool {
 }
 
 func TestDetermineMinimumOfArray(t *testing.T) {
-	pA := point.Point{
+	pA := Point{
 		X: 1,
 		Y: 1,
 	}
-	pB := point.Point{
+	pB := Point{
 		X: 1,
 		Y: 3,
 	}
-	pC := point.Point{
+	pC := Point{
 		X: 4,
 		Y: 4,
 	}
-	pD := point.Point{
+	pD := Point{
 		X: 6,
 		Y: 1,
 	}
 
-	ans := point.DetermineMinimumOfArray(pA, pB, pC, pD)
+	ans := DetermineMinimumOfArray(pA, pB, pC, pD)
 	if ans != 2 {
 		t.Errorf("DetermineMinimum()= %f; want 2", ans)
 	}

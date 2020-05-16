@@ -22,8 +22,6 @@ main.exe
 
 # Test
 
-cd src
-
 go test -v
 
 ## Travis
