@@ -10,15 +10,15 @@ Minimum distance of all points = 2.0
 
 # Build
 
-go build src/goCalcPoints.go
+go build main.go
 
 # Run
 
-go run src/goCalcPoints.go
+go run main.go
 
 or
 
-./src/goCalcPoints.exe
+main.exe
 
 # Test
 
