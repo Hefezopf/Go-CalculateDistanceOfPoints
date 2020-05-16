@@ -1,62 +1,70 @@
 package main
 
 import (
-    "fmt"
 	"errors"
+	"fmt"
 	"math"
 )
+
 type Point struct {
 	X int
 	Y int
 }
 
-func DetermineMinimum(P1 Point, P2 Point) float64 {  
-	return math.Sqrt(math.Pow(float64(P2.X-P1.X),2) + math.Pow(float64(P2.Y-P1.Y),2) );
-}
-
-func DetermineMinimumOfArray(P1 Point, P2 Point, P3 Point, P4 Point) float64 {  
-	return math.Sqrt(math.Pow(float64(P2.X-P1.X),2) + math.Pow(float64(P2.Y-P1.Y),2) );
-} 
-
 func main() {
 	fmt.Printf("Start App...\n")
-	
-	pA := Point {
-        X: 1,
-        Y: 1,
-	}	
-	pB := Point {
-        X: 1,
-        Y: 3,
+
+	pA := Point{
+		X: 1,
+		Y: 1,
 	}
-	pC := Point {
-        X: 4,
-        Y: 4,
-	}	
-	pD := Point {
-        X: 6,
-        Y: 1,
-    }
-
-	fmt.Println("DetermineMinimum(pA, pB)", DetermineMinimum(pA, pB))
-	fmt.Println("DetermineMinimum(pC, pD)", DetermineMinimum(pC, pD))
-
-	//Point[] points = {pA, pB, pC, pD};
-	fmt.Println("Minimum distance of all points = ", DetermineMinimumOfArray(pA, pB, pC, pD))
-
-	if 0 == 0 {
-		fmt.Println("0 == 0")
+	pB := Point{
+		X: 1,
+		Y: 3,
+	}
+	pC := Point{
+		X: 4,
+		Y: 4,
+	}
+	pD := Point{
+		X: 6,
+		Y: 1,
 	}
 
-    for i := 0; i <= 4; i++ {
-        fmt.Println(i)
-	}	
-	
-	var a [5]int
-	fmt.Println("emp:", a)
-	fmt.Println("len:", len(a))
-	
-	if 42 == 42 {
-		errors.New("can't work with 42") // ?
-    }	
+	points := []Point{pA, pB, pC, pD}
+	fmt.Println("Minimum distance of all points = ", DetermineMinimumOfArray(points))
+}
+
+func DetermineMinimum(P1 Point, P2 Point) float64 {
+	return math.Sqrt(math.Pow(float64(P2.X-P1.X), 2) + math.Pow(float64(P2.Y-P1.Y), 2))
+}
+
+func DetermineMinimumOfArray(points []Point) float64 {
+	if len(points) < 1 {
+		errors.New("too less points")
+	}
+	var min float64 = 99999999
+	for i := 0; i < len(points); i++ {
+		var startPoint = points[i]
+		//fmt.Println(startPoint.)
+		
+		if startPoint == (Point{}) {
+			errors.New("is null")
+		}
+		
+		min = Calculate(points, startPoint, min, i)
+	}
+
+	return min
+}
+
+func Calculate(points []Point, startPoint Point, min float64, startVal int) float64 {
+	for i := startVal+1; i < len(points); i++ {
+		var minTemp = DetermineMinimum(startPoint, points[i]);
+		if minTemp < min {
+			min = minTemp;
+		}
+	}
+
+	return min
 }

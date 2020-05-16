@@ -4,6 +4,7 @@ import (
   "testing"
   "math"
 )
+
 var pA Point = Point{
   X: 1,
   Y: 1,
@@ -36,7 +37,8 @@ func TestDetermineMinimumAC(t *testing.T) {
 }
 
 func TestDetermineMinimumOfArray(t *testing.T) {
-	ans := DetermineMinimumOfArray(pA, pB, pC, pD)
+  points := []Point{pA, pB, pC, pD}
+	ans := DetermineMinimumOfArray(points)
 	if ans != 2 {
 		t.Errorf("DetermineMinimum()= %f; want 2", ans)
 	}

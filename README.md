@@ -30,7 +30,4 @@ Each commit to GitHub will result in a automated online travis CI/CD build.
 
 https://travis-ci.com/github/Hefezopf/Go-CalculateDistanceOfPoints
 
-# Docs
-
-https://medium.com/rungo/everything-you-need-to-know-about-packages-in-go-b8bac62b74cc
 
