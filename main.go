@@ -1,7 +1,7 @@
 package main
+
 import (
     "fmt"
-	"math"
 	"errors"
 	"calc/point"
 )
@@ -26,20 +26,11 @@ func main() {
         Y: 1,
     }
 
-	fmt.Println("DetermineMinimum2()", point.DetermineMinimum(pA, pB))
-	fmt.Println("DetermineMinimum2()", point.DetermineMinimum(pC, pD))
-	//fmt.Println("determine()", determine())
+	fmt.Println("DetermineMinimum(pA, pB)", point.DetermineMinimum(pA, pB))
+	fmt.Println("DetermineMinimum(pC, pD)", point.DetermineMinimum(pC, pD))
 
-	
 	//Point[] points = {pA, pB, pC, pD};
-	
-	//System.out.println("Distance A, C = "+ Point.determineMinimum(pA, pC));
-	
-	//double minDistanceOfArray = Point.determineMinimumOfArray(points);
-	//System.out.println("Minimum distance of all points = "+ minDistanceOfArray);
-
-
-	fmt.Println(math.Sin(1))
+	fmt.Println("Minimum distance of all points = ", point.DetermineMinimumOfArray(pA, pB, pC, pD))
 
 	if 0 == 0 {
 		fmt.Println("0 == 0")
@@ -52,20 +43,8 @@ func main() {
 	var a [5]int
 	fmt.Println("emp:", a)
 	fmt.Println("len:", len(a))
-		
-	res := plus(1, 2)
-	fmt.Println("1+2 =", res)
 	
 	if 42 == 42 {
 		errors.New("can't work with 42") // ?
     }	
-}
-
-func plus(a int, b int) int {
-	return a + b
-}
-
-
-func calc() int {
-    return 1
 }
