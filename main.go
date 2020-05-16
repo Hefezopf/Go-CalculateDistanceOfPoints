@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"./src/calc"
+	//"./src/calc"
 )
 
 func main() {
