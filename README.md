@@ -26,10 +26,15 @@ or
 
 **main.exe**
 
+Output:
+
+>Start App...
+>
+>Minimum distance of all points = 2
 
 or run with params
 
-**go run xxxxxxx="(4,3) (5,2) (1,1) (1,2)"**
+**go run main.go "(4,3) (5,2) (1,1) (1,2)"**
 
 Calling the app with this params should result in:
  
@@ -37,7 +42,7 @@ Output:
 
 >Start App...
 >
->Minimum distance of all points = 1.0
+>Minimum distance of all points = 1
 
 Hint: Only use single digit numbers as point coordinates like (4,3)!
 
