@@ -10,19 +10,37 @@ Minimum distance of all points = 2.0
 
 # Build
 
-go build main.go
+**go build main.go**
 
-# Run
-
-go run main.go
-
-or
-
-main.exe
 
 # Test
 
-go test -v
+**go test -v**
+
+
+# Run
+
+**go run main.go**
+
+or
+
+**main.exe**
+
+
+or run with params
+
+**go run xxxxxxx="(4,3) (5,2) (1,1) (1,2)"**
+
+Calling the app with this params should result in:
+ 
+Output:
+
+>Start App...
+>
+>Minimum distance of all points = 1.0
+
+Hint: Only use single digit numbers as point coordinates like (4,3)!
+
 
 ## Travis
 
