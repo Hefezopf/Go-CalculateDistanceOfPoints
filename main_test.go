@@ -31,7 +31,7 @@ func TestDetermineMinimumAB(t *testing.T) {
 
 func TestDetermineMinimumAC(t *testing.T) {
   ans := DetermineMinimum(pA, pC)
-	if math.Round(ans) != 4.0 {
+	if math.Round(ans) != 14.0 {
 		t.Errorf("DetermineMinimum()= %f; want 4.242641", ans)
 	}
 }
