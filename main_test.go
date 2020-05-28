@@ -59,18 +59,48 @@ func TestParseToCoord(t *testing.T) {
 		t.Errorf("ParseToCoord()= %d; want 3", ans[1])
 	}
 }
-func TestDetermineMinimumAB(t *testing.T) {
-	ans := DetermineMinimum(pA, pB)
+func TestDetermineDistanceAB(t *testing.T) {
+	ans := DetermineDistance(pA, pB)
 
 	if ans != 2 {
-		t.Errorf("DetermineMinimum()= %f; want 2", ans)
+		t.Errorf("DetermineDistance()= %f; want 2", ans)
 	}
 }
 
-func TestDetermineMinimumAC(t *testing.T) {
-	ans := DetermineMinimum(pA, pC)
+func TestDetermineDistanceAC(t *testing.T) {
+	ans := DetermineDistance(pA, pC)
 	if math.Round(ans) != 4.0 {
-		t.Errorf("DetermineMinimum()= %f; want 4.242641", ans)
+		t.Errorf("DetermineDistance()= %f; want 4.242641", ans)
+	}
+}
+
+func TestDetermineMaximumOfArray1(t *testing.T) {
+	points := []Point{pA, pB, pC}
+
+	ans := DetermineMaximumOfArray(points)
+
+	if ans != 4.242640687119285 {
+		t.Errorf("DetermineMaximum()= %f; want 4.242640687119285", ans)
+	}
+}
+
+func TestDetermineMaximumOfArray2(t *testing.T) {
+	points := []Point{pA, pB, pC, pD}
+
+	ans := DetermineMaximumOfArray(points)
+
+	if ans != 5.385164807134504 {
+		t.Errorf("DetermineMaximum()= %f; want 5.385164807134504", ans)
+	}
+}
+
+func TestDetermineMaximumOfArray3(t *testing.T) {
+	points := []Point{pA, pC, pD}
+
+	ans := DetermineMaximumOfArray(points)
+
+	if ans != 5.0 {
+		t.Errorf("DetermineMaximum()= %f; want 5.0", ans)
 	}
 }
 
@@ -83,6 +113,7 @@ func TestDetermineMinimumOfArray1(t *testing.T) {
 		t.Errorf("DetermineMinimum()= %f; want 3.605551275463989", ans)
 	}
 }
+
 func TestDetermineMinimumOfArray2(t *testing.T) {
 	points := []Point{pA, pB, pC, pD}
 
