@@ -79,8 +79,8 @@ func TestDetermineMaximumOfArray1(t *testing.T) {
 
 	ans := DetermineMaximumOfArray(points)
 
-	if ans != 4.242640687119285 {
-		t.Errorf("DetermineMaximum()= %f; want 4.242640687119285", ans)
+	if ans != 4.24 {
+		t.Errorf("DetermineMaximum()= %f; want 4.24", ans)
 	}
 }
 
@@ -89,8 +89,8 @@ func TestDetermineMaximumOfArray2(t *testing.T) {
 
 	ans := DetermineMaximumOfArray(points)
 
-	if ans != 5.385164807134504 {
-		t.Errorf("DetermineMaximum()= %f; want 5.385164807134504", ans)
+	if ans != 5.39 {
+		t.Errorf("DetermineMaximum()= %f; want 5.39", ans)
 	}
 }
 
@@ -109,8 +109,8 @@ func TestDetermineMinimumOfArray1(t *testing.T) {
 
 	ans := DetermineMinimumOfArray(points)
 
-	if ans != 3.605551275463989 {
-		t.Errorf("DetermineMinimum()= %f; want 3.605551275463989", ans)
+	if ans != 3.61 {
+		t.Errorf("DetermineMinimum()= %f; want 3.61", ans)
 	}
 }
 

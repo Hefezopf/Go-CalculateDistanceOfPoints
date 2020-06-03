@@ -82,7 +82,7 @@ func DetermineMaximumOfArray(points []Point) float64 {
 		max = calculateMaximum(points, startPoint, max, i)
 	}
 
-	return max
+	return limitValue(max, 2)
 }
 
 // DetermineMinimumOfArray Determine the minimum of a point array
@@ -100,7 +100,20 @@ func DetermineMinimumOfArray(points []Point) float64 {
 		min = calculateMinimum(points, startPoint, min, i)
 	}
 
-	return min
+	return limitValue(min, 2)
+}
+
+// limitValue to digits
+func limitValue(value float64, digits int) float64 {
+	var erg = 0.0
+	var str = fmt.Sprintf("%.2f", value) 
+	erg, err := strconv.ParseFloat(str, 32)
+	if err != nil {
+		return math.Round(erg * 100.0) / 100.0
+	}
+
+	return math.Round(erg * 100.0) / 100.0
+
 }
 
 // Calculate maximum
