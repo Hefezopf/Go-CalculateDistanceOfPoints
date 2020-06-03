@@ -90,7 +90,7 @@ func DetermineMinimumOfArray(points []Point) float64 {
 	if len(points) < 1 {
 		errors.New("too less points")
 	}
-	var min float64 = 99999999
+	var min float64 = math.MaxFloat64
 	for i := 0; i < len(points); i++ {
 		var startPoint = points[i]
 		if startPoint == (Point{}) {
