@@ -44,7 +44,8 @@ jobs:
           
           mkdir -p from-kotlin
           cp Kotlin-CalculateDistanceOfPoints/README.md from-kotlin 
-          cat README.md >> from-kotlin/README.md
+          # cat README.md >> from-kotlin/README.md
+          date >> from-kotlin/README.md
           rm -rf Kotlin-CalculateDistanceOfPoints
           
           git add from-kotlin/README.md
