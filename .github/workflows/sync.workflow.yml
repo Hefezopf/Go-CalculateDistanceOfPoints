@@ -28,6 +28,7 @@ jobs:
         run: |
           git config --global user.email "markus@hopf-it.de"
           git config --global user.name "Github Action: Sync Repos"
+
           git clone https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/Kotlin-CalculateDistanceOfPoints
           
           mkdir -p from-kotlin
@@ -36,6 +37,17 @@ jobs:
           rm -rf Kotlin-CalculateDistanceOfPoints
           
           git add from-kotlin/README.md
+          git commit -am "Github Commit: Sync Repos" --allow-empty
+          git push origin master
+
+          git clone https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/stock-analyse
+          
+          mkdir -p from-stock-analyse
+          cp stock-analyse/data from-stock-analyse
+          # date >> from-kotlin/README.md
+          rm -rf stock-analyse
+          
+          git add from-stock-analyse/data
           git commit -am "Github Commit: Sync Repos" --allow-empty
           git push origin master
 
