@@ -42,11 +42,11 @@ jobs:
           git config --global user.name "Github Action: Sync Repos"
           # git submodule add -f https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/Kotlin-CalculateDistanceOfPoints
           git clone https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/Kotlin-CalculateDistanceOfPoints
-          ls Kotlin-CalculateDistanceOfPoints -lisa
+          # ls Kotlin-CalculateDistanceOfPoints -lisa
           mkdir -p from-kotlin
-          cp Kotlin-CalculateDistanceOfPoints/build/kotlin/compileKotlin/last-build.bin from-kotlin 
-          cat "README.md" >> from-kotlin/last-build.bin
-          git add from-kotlin/last-build.bin
+          cp Kotlin-CalculateDistanceOfPoints/README.md from-kotlin 
+          cat README.md >> from-kotlin/README.md
+          git add from-kotlin/README.md
           git commit -am "test"
           git push origin master
           rm -rf Kotlin-CalculateDistanceOfPoints
