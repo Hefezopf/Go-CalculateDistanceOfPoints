@@ -1,12 +1,32 @@
 name: Sync Repos
 
 on:
-  push:
-    branches:
-      - main
+  #push:
+    #branches:
+      #- main
   # You can add more triggers, such as scheduled events
   # schedule:
   #   - cron: '0 0 * * *'
+
+    # Can be triggered manually
+  workflow_dispatch:
+    inputs:
+      symbolsParam:
+        description: 'SYMBOLS - List of stock symbols like: "*DBK BEI". Own stocks marked *'
+        required: true
+        default: '*DBK BEI'
+      percentageParam:
+        description: 'PERCENTAGE - "1" means 1 percent'     
+        required: true
+        default: '1'
+      stochasticParam:
+        description: 'STOCHASTIC14 - "9" means 9/91 percent (only single digit allowed!)'     
+        required: true
+        default: '9'
+      RSIParam:
+        description: 'RSI14 - "25" means 25/75 quote. (only 30 and less allowed!)'
+        required: true
+        default: '25'
 
 jobs:
   sync:
