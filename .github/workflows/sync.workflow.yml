@@ -40,15 +40,13 @@ jobs:
         run: |
           git config --global user.email "your email"
           git config --global user.name "your user name"
-          # https://github.com/Hefezopf/stock-analyse.git
           git clone https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/Kotlin-CalculateDistanceOfPoints
-          # git clone https://Hefezopf:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/Kotlin-CalculateDistanceOfPoints.git
-          # cd Kotlin-CalculateDistanceOfPoints
           ls Kotlin-CalculateDistanceOfPoints -lisa
           cp Kotlin-CalculateDistanceOfPoints/build/kotlin/compileKotlin/last-build.bin . 
           # git remote add ${{ env.ORIGINAL_REPO_NAME }} https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/${{ env.ORIGINAL_REPO_NAME }}.git
           # git remote update
           # git merge ${{ env.ORIGINAL_REPO_NAME }}/master
+          git add last-build.bin
           git commit -am "test"
           git push origin master
         env:
