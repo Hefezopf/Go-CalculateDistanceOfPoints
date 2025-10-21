@@ -43,6 +43,7 @@ jobs:
 
           git clone --depth 1 --no-checkout --filter=blob:none https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/stock-analyse
           cd stock-analyse
+          git sparse-checkout set --no-cone /data
           ls -lisa
           git checkout main -- data/BEI.TXT
           ls -lisa
