@@ -40,16 +40,21 @@ jobs:
           git commit -am "Github Commit: Sync Repos" --allow-empty
           git push origin master
 
-          git clone https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/stock-analyse
+
+          git clone --depth 1 --no-checkout --filter=blob:none https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/stock-analyse
+          cd stock-analyse
+          git checkout master -- data/BEI.TXT
+
+
+          #git clone https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/stock-analyse
           
-          mkdir -p from-stock-analyse
-          cp stock-analyse/data from-stock-analyse
-          # date >> from-kotlin/README.md
-          rm -rf stock-analyse
+          #mkdir -p from-stock-analyse
+          #cp -r stock-analyse/data from-stock-analyse
+          #rm -rf stock-analyse
           
-          git add from-stock-analyse/data
-          git commit -am "Github Commit: Sync Repos" --allow-empty
-          git push origin master
+          #git add from-stock-analyse/data
+          #git commit -am "Github Commit: Sync Repos" --allow-empty
+          #git push origin master
 
         env:
           # GITHUB_TOKEN: ${{ secrets.PAT }}
