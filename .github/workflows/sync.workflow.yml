@@ -44,7 +44,7 @@ jobs:
           ls Kotlin-CalculateDistanceOfPoints -lisa
           mkdir -p from-kotlin
           cp Kotlin-CalculateDistanceOfPoints/build/kotlin/compileKotlin/last-build.bin from-kotlin 
-          git submodule add https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/Kotlin-CalculateDistanceOfPoints
+          git submodule add -f https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/Kotlin-CalculateDistanceOfPoints
           git add from-kotlin/last-build.bin
           git commit -am "test"
           git push origin master
