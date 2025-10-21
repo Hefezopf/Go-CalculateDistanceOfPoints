@@ -43,21 +43,20 @@ jobs:
 
           git clone --depth 1 --no-checkout --filter=blob:none https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/stock-analyse
           cd stock-analyse
-          git sparse-checkout set --no-cone /data
+          git sparse-checkout set --no-cone /doc
           ls -lisa
-          git checkout main -- data
-          ls -lisa
+          git checkout main -- doc
+          ls doc -lisa
 
-
-          #git clone https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/stock-analyse
-          
           #mkdir -p from-stock-analyse
-          #cp -r stock-analyse/data from-stock-analyse
+          #cp -r stock-analyse/doc from-stock-analyse
           #rm -rf stock-analyse
           
-          #git add from-stock-analyse/data
-          #git commit -am "Github Commit: Sync Repos" --allow-empty
-          #git push origin main
+          git add stock-analyse/doc
+          git commit -am "Github Commit: Sync Repos" --allow-empty
+          git push origin main
+
+          rm -rf stock-analyse
 
         env:
           # GITHUB_TOKEN: ${{ secrets.PAT }}
