@@ -56,6 +56,9 @@ jobs:
           git commit -am "Github Commit: Sync Repos" --allow-empty
           git push origin main
 
+          cd ..
+          pwd
+          ls -lisa
           # cd ..
           # rm -rf stock-analyse
 
