@@ -41,24 +41,21 @@ jobs:
           git push origin master
 
 
-          git clone --depth 1 --no-checkout --filter=blob:none https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/stock-analyse
-          cd stock-analyse
-          git sparse-checkout set --no-cone /doc
-          ls -lisa
-          git checkout main -- doc
-          ls doc -lisa
 
-          #mkdir -p from-stock-analyse
-          #cp -r stock-analyse/doc from-stock-analyse
-          #rm -rf stock-analyse
-          
-          git add doc/calculation.txt
-          git commit -am "Github Commit: Sync Repos" --allow-empty
-          git push origin main
+        #   git clone --depth 1 --no-checkout --filter=blob:none https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/stock-analyse
+        #   cd stock-analyse
+        #   git sparse-checkout set --no-cone /doc
+        #   ls -lisa
+        #   git checkout main -- doc
+        #   ls doc -lisa
 
-          cd ..
-          pwd
-          ls -lisa
+        #   git add doc/calculation.txt
+        #   git commit -am "Github Commit: Sync Repos" --allow-empty
+        #   git push origin main
+
+        #   cd ..
+        #   pwd
+        #   ls -lisa
           # cd ..
           # rm -rf stock-analyse
 
