@@ -43,7 +43,7 @@ jobs:
 
           git clone --depth 1 --no-checkout --filter=blob:none https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/stock-analyse
           cd stock-analyse
-          git checkout master -- data/BEI.TXT
+          git checkout main -- data/BEI.TXT
 
 
           #git clone https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/stock-analyse
@@ -54,7 +54,7 @@ jobs:
           
           #git add from-stock-analyse/data
           #git commit -am "Github Commit: Sync Repos" --allow-empty
-          #git push origin master
+          #git push origin main
 
         env:
           # GITHUB_TOKEN: ${{ secrets.PAT }}
