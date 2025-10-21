@@ -41,8 +41,8 @@ jobs:
           git config --global user.email "your email"
           git config --global user.name "your user name"
           # https://github.com/Hefezopf/stock-analyse.git
-          git clone https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/Kotlin-CalculateDistanceOfPoints
-          # git clone https://Hefezopf:${{ secrets.PAT }}@github.com/Kotlin-CalculateDistanceOfPoints.git
+          git clone https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/Kotlin-CalculateDistanceOfPoints
+          # git clone https://Hefezopf:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/Kotlin-CalculateDistanceOfPoints.git
           cd Kotlin-CalculateDistanceOfPoints
           git remote add ${{ env.ORIGINAL_REPO_NAME }} https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/${{ env.ORIGINAL_REPO_NAME }}.git
           git remote update
