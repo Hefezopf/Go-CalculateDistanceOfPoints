@@ -48,7 +48,7 @@ jobs:
           rm -rf Kotlin-CalculateDistanceOfPoints
           
           git add from-kotlin/README.md
-          git commit -am "Github Commit: Sync Repos"
+          git commit -am "Github Commit: Sync Repos" --allow-empty
           git push origin master
 
         env:
