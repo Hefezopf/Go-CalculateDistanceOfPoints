@@ -56,8 +56,8 @@ jobs:
           git commit -am "Github Commit: Sync Repos" --allow-empty
           git push origin main
 
-          cd ..
-          rm -rf stock-analyse
+          # cd ..
+          # rm -rf stock-analyse
 
         env:
           # GITHUB_TOKEN: ${{ secrets.PAT }}
