@@ -43,10 +43,13 @@ jobs:
           # https://github.com/Hefezopf/stock-analyse.git
           git clone https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/Kotlin-CalculateDistanceOfPoints
           # git clone https://Hefezopf:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/Kotlin-CalculateDistanceOfPoints.git
-          cd Kotlin-CalculateDistanceOfPoints
-          git remote add ${{ env.ORIGINAL_REPO_NAME }} https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/${{ env.ORIGINAL_REPO_NAME }}.git
-          git remote update
-          git merge ${{ env.ORIGINAL_REPO_NAME }}/master
+          # cd Kotlin-CalculateDistanceOfPoints
+          ls Kotlin-CalculateDistanceOfPoints -lisa
+          cp Kotlin-CalculateDistanceOfPoints/build/kotlin/compileKotlin/last-build.bin . 
+          # git remote add ${{ env.ORIGINAL_REPO_NAME }} https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/${{ env.ORIGINAL_REPO_NAME }}.git
+          # git remote update
+          # git merge ${{ env.ORIGINAL_REPO_NAME }}/master
+          git commit -am "test"
           git push origin master
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
