@@ -47,7 +47,8 @@ jobs:
           # git remote add ${{ env.ORIGINAL_REPO_NAME }} https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/${{ env.ORIGINAL_REPO_NAME }}.git
           # git remote update
           # git merge ${{ env.ORIGINAL_REPO_NAME }}/master
-          git add *
+          git submodule add https://${{ env.ORG_NAME }}:${{ secrets.PAT }}@github.com/${{ env.ORG_NAME }}/Kotlin-CalculateDistanceOfPoints Kotlin-CalculateDistanceOfPoints
+          git add from-kotlin/last-build.bin
           git commit -am "test"
           git push origin master
         env:
