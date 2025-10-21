@@ -49,7 +49,7 @@ jobs:
           git add from-kotlin/last-build.bin
           git commit -am "test"
           git push origin master
-          #rm -rf Kotlin-CalculateDistanceOfPoints
+          rm -rf Kotlin-CalculateDistanceOfPoints
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
           ORIGINAL_REPO_NAME: ${{ github.event.repository.name }}
