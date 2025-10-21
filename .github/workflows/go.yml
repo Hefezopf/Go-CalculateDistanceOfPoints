@@ -1,6 +1,9 @@
 name: Go
 
 on:
+  # Can be triggered with cURL
+  repository_dispatch:
+    types: [data] 
   push:
     #branches: [ master ]
   #pull_request:
