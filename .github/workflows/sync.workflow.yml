@@ -15,18 +15,6 @@ on:
         description: 'SYMBOLS - List of stock symbols like: "*DBK BEI". Own stocks marked *'
         required: true
         default: '*DBK BEI'
-      percentageParam:
-        description: 'PERCENTAGE - "1" means 1 percent'     
-        required: true
-        default: '1'
-      stochasticParam:
-        description: 'STOCHASTIC14 - "9" means 9/91 percent (only single digit allowed!)'     
-        required: true
-        default: '9'
-      RSIParam:
-        description: 'RSI14 - "25" means 25/75 quote. (only 30 and less allowed!)'
-        required: true
-        default: '25'
 
 jobs:
   sync:
@@ -44,7 +32,6 @@ jobs:
           
           mkdir -p from-kotlin
           cp Kotlin-CalculateDistanceOfPoints/README.md from-kotlin 
-          # cat README.md >> from-kotlin/README.md
           date >> from-kotlin/README.md
           rm -rf Kotlin-CalculateDistanceOfPoints
           
@@ -53,7 +40,7 @@ jobs:
           git push origin master
 
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
-          ORIGINAL_REPO_NAME: ${{ github.event.repository.name }}
+          # GITHUB_TOKEN: ${{ secrets.PAT }}
+          # ORIGINAL_REPO_NAME: ${{ github.event.repository.name }}
           ORG_NAME: Hefezopf
 
