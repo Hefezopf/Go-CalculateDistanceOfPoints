@@ -45,7 +45,7 @@ jobs:
           cd stock-analyse
           git sparse-checkout set --no-cone /data
           ls -lisa
-          git checkout main -- data/BEI.TXT
+          git checkout main -- data
           ls -lisa
 
 
