@@ -52,7 +52,7 @@ jobs:
           #cp -r stock-analyse/doc from-stock-analyse
           #rm -rf stock-analyse
           
-          git add stock-analyse/doc
+          git add stock-analyse/doc/*
           git commit -am "Github Commit: Sync Repos" --allow-empty
           git push origin main
 
